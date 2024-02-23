@@ -4,13 +4,22 @@ import styles from '../styles';
 import TaskItem from './TaskItem';
 import { Task } from './TaskItem'; // Предполагается, что интерфейс Task экспортируется из TaskItem
 
-const TaskList = ({ tasks }: { tasks: Task[] }) => {
+interface TaskListProps {
+  tasks: Task[];
+  onDeleteTask: (taskId: string) => void;
+}
+
+const TaskList = ({ tasks, onDeleteTask }: TaskListProps) => {
+  const handleDeleteTask = (taskId: string) => {
+    onDeleteTask(taskId);
+  };
+
   return (
     <View style={styles.listContainer}>
       {tasks.length > 0 ? (
         <FlatList
           data={tasks}
-          renderItem={({ item }) => <TaskItem task={item} />}
+          renderItem={({ item }) => <TaskItem task={item} onDelete={handleDeleteTask} />}
           keyExtractor={item => item.id}
         />
       ) : (

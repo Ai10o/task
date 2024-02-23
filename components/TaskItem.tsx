@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,  TouchableOpacity } from 'react-native';
 import styles from '../styles';
 
 export interface Task {
@@ -8,13 +8,20 @@ export interface Task {
     description: string;
   }
 
-const TaskItem = ({ task }: { task: Task }) => {
-  return (
-    <View style={styles.taskItem}>
-      <Text style={styles.taskTitle}>{task.title}</Text>
-      <Text style={styles.taskDescription}>{task.description}</Text>
-    </View>
-  );
-};
+  const TaskItem = ({ task, onDelete }: { task: Task; onDelete: (taskId: string) => void }) => {
+    const handleDelete = () => {
+      onDelete(task.id);
+    };
+  
+    return (
+      <View style={styles.taskItem}>
+        <Text style={styles.taskTitle}>{task.title}</Text>
+        <Text style={styles.taskDescription}>{task.description}</Text>
+        <TouchableOpacity onPress={handleDelete} style={styles.deleteButton}>
+          <Text style={styles.deleteButtonText}>X</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  };
 
 export default TaskItem;

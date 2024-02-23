@@ -1,6 +1,6 @@
-import React from 'react';
-import { SafeAreaView, StatusBar } from 'react-native';
-import HomeScreen from './screens/HomeScreenn';
+import React, { useEffect }  from 'react';
+import { SafeAreaView, StatusBar, Text } from 'react-native';
+import HomeScreen from './screens/HomeScren';
 
 
 const App = () => {
