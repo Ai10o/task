@@ -19,24 +19,56 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 20,
   },
+  deleteButton: {
+    borderRadius: 50,
+    position: 'absolute',
+    top: 10,
+    backgroundColor: 'red',
+    right: 0,
+    width: 30, /* Ширина квадрата */
+    height: 30, /* Высота квадрата */
+  },
+  deleteButtonText:{
+    color: 'white',
+    fontFamily: 'VAG World',
+    textAlign: 'center',
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    transform: [{ scaleX: 1.4 }],
+    fontSize: 20,
+  },
   taskItem: {
-    padding: 20,
+    paddingVertical: 20,
+
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
-  },
+  },  
   taskTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     color: 'black',
+    marginRight: 70,
   },
   taskDescription: {
     fontSize: 14,
     color: 'black',
   },
+  input: {
+    height: 40, // Высота поля ввода
+    marginVertical: 10, // Вертикальный отступ
+    borderWidth: 1, // Толщина границы
+    borderColor: '#cccccc', // Цвет границы
+    padding: 10, // Внутренний отступ
+    backgroundColor: '#ffffff', // Цвет фона
+    color: '#000000', // Цвет текста
+  },
   noTasksText: {
     textAlign: 'center',
-    marginTop: 50,
+    top: 200,
     fontSize: 18,
+    color: 'lightgrey',
   },
   addButton: {
     position: 'absolute',
@@ -48,25 +80,35 @@ const styles = StyleSheet.create({
     backgroundColor: '#797979',
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  addButtonText: {
-    fontSize: 24,
+},
+addButtonText: {
+    fontSize: 70, 
+    textAlign: 'center',
     color: '#fff',
-  },
+    lineHeight: 66,
+    fontWeight: 'bold',
+},
+editButton: {
+    borderRadius: 50,
+    position: 'absolute',
+    top: 10,
+    backgroundColor: '#797979',
+    right: 40,
+    width: 30, /* Ширина квадрата */
+    height: 30, /* Высота квадрата */
+},
+editButtonText: {
+  fontSize: 70, 
+  textAlign: 'center',
+  color: '#fff',
+  lineHeight: 66,
+  fontWeight: 'bold',
+},
+
   modalContent: {
     flex: 1,
     padding: 20,
   },
-  input: {
-    height: 40, // Высота поля ввода
-    marginVertical: 10, // Вертикальный отступ
-    borderWidth: 1, // Толщина границы
-    borderColor: '#cccccc', // Цвет границы
-    padding: 10, // Внутренний отступ
-    backgroundColor: '#ffffff', // Цвет фона
-    color: '#000000', // Цвет текста
-  },
-  
   textArea: {
     height: 100, // Высота многострочного поля ввода
     marginVertical: 10, // Вертикальный отступ
@@ -80,16 +122,47 @@ const styles = StyleSheet.create({
   
   modalButtons: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
   },
   button: {
     padding: 10,
     backgroundColor: '#797979',
     borderRadius: 5,
+    marginTop: 5,
+    marginBottom: -5,
+    marginHorizontal: 20, // Добавить горизонтальные отступы для увеличения расстояния между кнопками
   },
   buttonText: {
     color: '#fff',
   },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: 'white',
+    borderRadius: 20,
+    padding: 35,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+
+  modalText: {
+    marginBottom: 15,
+    textAlign: 'center',
+    color: 'black',
+  },
+
 });
+
 
 export default styles;
